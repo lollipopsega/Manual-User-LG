@@ -3,149 +3,40 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Catálogo Online</title>
-  <meta name="description" content="Manual / catálogo online en PDF" />
+  <title>Catálogo Online - Manual LG</title>
   <style>
-    :root{
-      --bg:#0b1220;
-      --card:#0f1b33;
-      --text:#eaf0ff;
-      --muted:#b9c7ff;
-      --btn:#2b5aa0;
-      --shadow: 0 18px 60px rgba(0,0,0,.35);
-      --radius: 18px;
+    html, body { height: 100%; margin: 0; }
+    .wrap { height: 100%; display: flex; flex-direction: column; }
+    header {
+      padding: 10px 14px;
+      font-family: Arial, sans-serif;
+      border-bottom: 1px solid #eee;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: space-between;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      background: radial-gradient(1200px 600px at 70% 0%, #16305f 0%, var(--bg) 55%);
-      color:var(--text);
-      min-height:100vh;
-    }
-    header{
-      padding:26px 16px 10px;
-      display:flex;
-      justify-content:center;
-    }
-    .wrap{width:min(1100px, 100%); padding:0 14px;}
-    .topbar{
-      display:flex; gap:12px; flex-wrap:wrap;
-      align-items:center; justify-content:space-between;
-      background: rgba(15,27,51,.72);
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      padding:14px 14px;
-      backdrop-filter: blur(8px);
-    }
-    .brand{
-      display:flex; gap:10px; align-items:center;
-      min-width: 220px;
-    }
-    .dot{
-      width:12px; height:12px; border-radius:50%;
-      background: #2ee59d;
-      box-shadow: 0 0 0 6px rgba(46,229,157,.12);
-      flex:0 0 auto;
-    }
-    .title{
-      font-weight:700; letter-spacing:.3px;
-      font-size:16px; line-height:1.2;
-    }
-    .subtitle{
-      font-size:12px; color:var(--muted); margin-top:2px;
-    }
-    .actions{display:flex; gap:10px; flex-wrap:wrap; justify-content:flex-end;}
-    .btn{
-      appearance:none; border:0; cursor:pointer;
-      padding:10px 12px;
-      border-radius: 12px;
-      font-weight:700; font-size:13px;
-      color:var(--text);
-      background: var(--btn);
-      box-shadow: 0 10px 22px rgba(43,90,160,.28);
-      text-decoration:none;
-      display:inline-flex; align-items:center; gap:8px;
-      transition: transform .12s ease, filter .12s ease;
-      user-select:none;
-    }
-    .btn:hover{transform: translateY(-1px); filter:brightness(1.03)}
-    .btn.secondary{
-      background: rgba(255,255,255,.08);
-      box-shadow:none;
-      border: 1px solid rgba(255,255,255,.12);
-    }
-
-    main{
-      padding:10px 16px 26px;
-      display:flex;
-      justify-content:center;
-    }
-    .viewer{
-      width:min(1100px, 100%);
-      background: rgba(15,27,51,.55);
-      border: 1px solid rgba(255,255,255,.08);
-      box-shadow: var(--shadow);
-      border-radius: var(--radius);
-      overflow:hidden;
-    }
-    .frame{
-      width:100%;
-      height: calc(100vh - 170px);
-      border:0;
-      background: #0b1220;
-      display:block;
-    }
-
-    @media (max-width: 640px){
-      .brand{min-width: auto}
-      .frame{height: calc(100vh - 210px);}
-      .btn{width:100%; justify-content:center;}
-      .actions{width:100%;}
-      .topbar{gap:10px;}
-    }
+    header .title { font-weight: 700; }
+    header a { text-decoration: none; }
+    iframe { width: 100%; height: 100%; border: 0; }
   </style>
 </head>
 <body>
-  <!-- URL del PDF (con espacios codificados) -->
-  <script>
-    const PDF_URL = "Front-LG%209kg-10Kg-12Kg%20Manual%20User.pdf";
-  </script>
-
-  <header>
-    <div class="wrap">
-      <div class="topbar">
-        <div class="brand">
-          <div class="dot"></div>
-          <div>
-            <div class="title">Manual / Catálogo Online</div>
-            <div class="subtitle">Front LG 9kg–10Kg–12Kg (PDF)</div>
-          </div>
-        </div>
-
-        <div class="actions">
-          <a class="btn" id="openTab" target="_blank" rel="noopener">Abrir en pestaña</a>
-          <a class="btn secondary" id="downloadPdf" download>Descargar PDF</a>
-        </div>
+  <div class="wrap">
+    <header>
+      <div class="title">Manual LG (Online)</div>
+      <div>
+        <a href="Front-LG%209kg-10Kg-12Kg%20Manual%20User.pdf" target="_blank" rel="noopener">Abrir PDF</a>
+        &nbsp;|&nbsp;
+        <a href="Front-LG%209kg-10Kg-12Kg%20Manual%20User.pdf" download>Descargar</a>
       </div>
-    </div>
-  </header>
+    </header>
 
-  <main>
-    <section class="viewer">
-      <iframe class="frame" id="pdfFrame" title="PDF"></iframe>
-    </section>
-  </main>
-
-  <script>
-    const openTab = document.getElementById("openTab");
-    const downloadPdf = document.getElementById("downloadPdf");
-    const pdfFrame = document.getElementById("pdfFrame");
-
-    openTab.href = PDF_URL;
-    downloadPdf.href = PDF_URL;
-    pdfFrame.src = PDF_URL + "#view=FitH";
-  </script>
+    <iframe
+      src="Front-LG%209kg-10Kg-12Kg%20Manual%20User.pdf#view=FitH"
+      title="PDF"
+      loading="lazy">
+    </iframe>
+  </div>
 </body>
 </html>
