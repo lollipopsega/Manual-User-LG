@@ -4,39 +4,70 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Catálogo Online - Manual LG</title>
+
   <style>
-    html, body { height: 100%; margin: 0; }
-    .wrap { height: 100%; display: flex; flex-direction: column; }
-    header {
-      padding: 10px 14px;
+    html, body {
+      height: 100%;
+      margin: 0;
       font-family: Arial, sans-serif;
-      border-bottom: 1px solid #eee;
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      justify-content: space-between;
+      background: #f5f5f5;
     }
-    header .title { font-weight: 700; }
-    header a { text-decoration: none; }
-    iframe { width: 100%; height: 100%; border: 0; }
+
+    .wrap {
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background: #0A2E63;
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header .title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    header a {
+      color: white;
+      text-decoration: none;
+      margin-left: 15px;
+      font-size: 14px;
+    }
+
+    header a:hover {
+      text-decoration: underline;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
   </style>
 </head>
+
 <body>
   <div class="wrap">
+
     <header>
-      <div class="title">Manual LG (Online)</div>
+      <div class="title">Manual LG Online</div>
       <div>
-        <a href="Front-LG%209kg-10Kg-12Kg%20Manual%20User.pdf" target="_blank" rel="noopener">Abrir PDF</a>
-        &nbsp;|&nbsp;
-        <a href="Front-LG%209kg-10Kg-12Kg%20Manual%20User.pdf" download>Descargar</a>
+        <a href="Front-LG-9kg-10Kg-12Kg-Manual-User.pdf" target="_blank">Abrir PDF</a>
+        <a href="Front-LG-9kg-10Kg-12Kg-Manual-User.pdf" download>Descargar</a>
       </div>
     </header>
 
-    <iframe
-      src="Front-LG%209kg-10Kg-12Kg%20Manual%20User.pdf#view=FitH"
-      title="PDF"
-      loading="lazy">
+    <iframe 
+      src="Front-LG-9kg-10Kg-12Kg-Manual-User.pdf#view=FitH"
+      title="Manual PDF">
     </iframe>
+
   </div>
 </body>
 </html>
